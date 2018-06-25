@@ -15,6 +15,8 @@ Note that, currently, the PyTorch implementation is inferior to the Caffe implem
 
 ### Network Architecture
 
+PWC-Net fuses several classic optical flow estimation techniques, including image pyramid, warping, and cost volume, in an end-to-end trainable deep neural networks for achieving state-of-the-art results.
+
 ![](network.png)
 
 
