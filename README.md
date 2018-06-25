@@ -7,16 +7,19 @@ Copyright (C) 2018 NVIDIA Corporation. All rights reserved. Licensed under the C
 
 ### Usage
 
-Pleaese follow the README in the Caffe and PyTorch folders to run the code. 
+For Caffe users, please refer to [Caffe/README.md](Caffe/README.md).
 
-One thing to note is that the PyTorch version does not fully reproduce the Caffe results (~3% performance drop on Sintel). There are differences in implementation between Caffe and PyTorch, such as image resizing and I/O. 
+For PyTorch users, please refer to [PyTorch/README.md](PyTorch/README.md)
+
+Note that, currently, the PyTorch implementation is inferior to the Caffe implementation (~3% performance drop on Sintel). These are due to differences in implementation between Caffe and PyTorch, such as image resizing and I/O. 
 
 
 ### Paper & Citation
-Deqing Sun, Xiaodong Yang, Ming-Yu Liu, and Jan Kautz. "PWC-Net: CNNs for Optical Flow Using Pyramid, Warping, and Cost Volume." CVPR 2018. 
-Deqing Sun, Xiaodong Yang, Ming-Yu Liu, and Jan Kautz. "PWC-Net: CNNs for Optical Flow Using Pyramid, Warping, and Cost Volume." arXiv preprint arXiv:1709.02371(https://arxiv.org/abs/1709.02371), 2017.
-Project webpage: http://research.nvidia.com/publication/2018-02_PWC-Net:-CNNs-for
-https://github.com/NVlabs/PWC-Net
+[Deqing Sun, Xiaodong Yang, Ming-Yu Liu, and Jan Kautz. "PWC-Net: CNNs for Optical Flow Using Pyramid, Warping, and Cost Volume." CVPR 2018 or arXiv:1709.02371](https://arxiv.org/abs/1709.02371)
+
+
+[Project page link](http://research.nvidia.com/publication/2018-02_PWC-Net:-CNNs-for)
+
  
 
 If you use PWC-Net, please cite the following paper: 
@@ -26,15 +29,6 @@ If you use PWC-Net, please cite the following paper:
   title     = {{PWC-Net}: CNNs for Optical Flow Using Pyramid, Warping, and Cost Volume},
   booktitle = CVPR,
   year      = {2018},
-}
-
-or the arXiv paper
-
-@article{sun2017pwc,
-  author={Sun, Deqing and Yang, Xiaodong and Liu, Ming-Yu and Kautz, Jan},
-  title={{PWC-Net}: CNNs for Optical Flow Using Pyramid, Warping, and Cost Volume},
-  journal={arXiv preprint arXiv:1709.02371},
-  year={2017}
 }
 
 
