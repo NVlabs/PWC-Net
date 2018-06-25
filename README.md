@@ -13,6 +13,10 @@ For PyTorch users, please refer to [PyTorch/README.md](PyTorch/README.md)
 
 Note that, currently, the PyTorch implementation is inferior to the Caffe implementation (~3% performance drop on Sintel). These are due to differences in implementation between Caffe and PyTorch, such as image resizing and I/O. 
 
+### Network Architecture
+
+![](network.png)
+
 
 ### Paper & Citation
 [Deqing Sun, Xiaodong Yang, Ming-Yu Liu, and Jan Kautz. "PWC-Net: CNNs for Optical Flow Using Pyramid, Warping, and Cost Volume." CVPR 2018 or arXiv:1709.02371](https://arxiv.org/abs/1709.02371)
