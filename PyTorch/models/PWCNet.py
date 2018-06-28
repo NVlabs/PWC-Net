@@ -64,7 +64,7 @@ class PWCDCNet(nn.Module):
         self.leakyRELU = nn.LeakyReLU(0.1)
         
         nd = (2*md+1)**2
-        dd = np.cumsum([128,128,96,64,32])
+        dd = np.cumsum([128,128,96,64,32]).tolist();
 
         od = nd
         self.conv6_0 = conv(od,      128, kernel_size=3, stride=1)
@@ -113,8 +113,7 @@ class PWCDCNet(nn.Module):
         self.conv2_3 = conv(od+dd[2],64,  kernel_size=3, stride=1)
         self.conv2_4 = conv(od+dd[3],32,  kernel_size=3, stride=1)
         self.predict_flow2 = predict_flow(od+dd[4]) 
-        self.deconv2 = deconv(2, 2, kernel_size=4, stride=2, padding=1) 
-        
+                
         self.dc_conv1 = conv(od+dd[4], 128, kernel_size=3, stride=1, padding=1,  dilation=1)
         self.dc_conv2 = conv(128,      128, kernel_size=3, stride=1, padding=2,  dilation=2)
         self.dc_conv3 = conv(128,      128, kernel_size=3, stride=1, padding=4,  dilation=4)
