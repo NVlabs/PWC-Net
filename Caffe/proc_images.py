@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw, ImageFont
 from scipy.misc import imread,imsave
 
 # to output the visualization, please download flow_io.py and viz_flow.py from https://github.com/jswulff/pcaflow/tree/master/pcaflow/utils
-# from flow_io import flow_read_uv
+# from flow_io import flow_read
 # from viz_flow import viz_flow 
 
 
@@ -83,8 +83,8 @@ def evaluate_model(template, model_filename, img1_filename, img2_filename, save_
             flow_fn = 'pwc-net-pred-' + str(ifile).zfill(7) + '.flo'
             if not os.path.exists(flow_fn): flow_fn = os.path.join('./tmp', flow_fn)
             # to output the visualization, please download flow_io.py and viz_flow.py from https://github.com/jswulff/pcaflow/tree/master/pcaflow/utils
-            # uv  = flow_read_uv(flow_fn)
-            # I_flow = Image.fromarray(viz_flow(uv[0,:,:], uv[1,:,:]))
+            # uv  = flow_read(flow_fn)
+            # I_flow = Image.fromarray(viz_flow(uv[0], uv[1]))
             # imsave(vis_save_filenames[ifile], I_flow)    
             os.system ("mv  %s %s" % (flow_fn, save_filenames[ifile]) )
 
