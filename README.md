@@ -28,6 +28,8 @@ PWC-Net fuses several classic optical flow estimation techniques, including imag
 
 [Project page link](http://research.nvidia.com/publication/2018-02_PWC-Net:-CNNs-for)
 
+[Talk at robust vision challenge workshop] (https://www.youtube.com/watch?v=vVU8XV0Ac_0)
+[Talk at CVPR 2018 conference (starts ~7:00)] (https://www.youtube.com/watch?v=LBJ20kxr1a0)
  
 
 If you use PWC-Net, please cite the following paper: 
