@@ -9,3 +9,19 @@ To install:
 3. Run `python setup.py build install`
 
 4. (optional) Run `python test/test.py`
+
+
+#### Acknowledgement
+- Thanks to Dr. Fitsum Reda for providing the wrapper to the correlation code
+
+If you find this implementation useful in your work, please acknowledge it appropriately and cite the paper:
+```
+@misc{flownet2-pytorch,
+  author = {Fitsum Reda and Robert Pottorff and Jon Barker and Bryan Catanzaro},
+  title = {flownet2-pytorch: Pytorch implementation of FlowNet 2.0: Evolution of Optical Flow Estimation with Deep Networks},
+  year = {2017},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/NVIDIA/flownet2-pytorch}}
+}
+```
