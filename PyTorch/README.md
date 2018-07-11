@@ -31,23 +31,23 @@ Project webpage: http://research.nvidia.com/publication/2018-02_PWC-Net:-CNNs-fo
  
 
 If you use PWC-Net, please cite the following paper: 
-
+```
 @InProceedings{Sun2018PWC-Net,
   author    = {Deqing Sun and Xiaodong Yang and Ming-Yu Liu and Jan Kautz},
-  title     = {PWC-Net: CNNs for Optical Flow Using Pyramid, Warping, and Cost Volume},
+  title     = {{PWC-Net}: {CNNs} for Optical Flow Using Pyramid, Warping, and Cost Volume},
   booktitle = CVPR,
   year      = {2018},
 }
-
+```
 or the arXiv paper
-
+```
 @article{sun2017pwc,
   author={Sun, Deqing and Yang, Xiaodong and Liu, Ming-Yu and Kautz, Jan},
-  title={PWC-Net: CNNs for Optical Flow Using Pyramid, Warping, and Cost Volume},
+  title={{PWC-Net}: {CNNs} for Optical Flow Using Pyramid, Warping, and Cost Volume},
   journal={arXiv preprint arXiv:1709.02371},
   year={2017}
 }
-
+```
 
 #### Contact
 Deqing Sun (deqings@nvidia.com); Zhile Ren (jrenzhile@gmail.com)
