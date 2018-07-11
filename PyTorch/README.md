@@ -21,7 +21,8 @@ Test the code: execute script_pwc.py [image1_filename] [image2_filename] [save_f
 
 
 #### Acknowledgement
-- Thanks to Dr. Zhile Ren for writing the PyTorch code and converting the Caffe model into PyTorch
+- Thanks to Dr. Jinwei Gu and Dr. Zhile Ren for writing the PyTorch code and converting the Caffe model into PyTorch
+- Thanks to Dr. Fitsum Reda for providing the wrapper to the correlation code
 
 #### Paper & Citation
 Deqing Sun, Xiaodong Yang, Ming-Yu Liu, Jan Kautz. PWC-Net: CNNs for Optical Flow Using Pyramid, Warping, and Cost Volume. CVPR 2018 Oral. 
