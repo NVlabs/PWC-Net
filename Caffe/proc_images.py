@@ -34,7 +34,7 @@ def evaluate_model(template, model_filename, img1_filename, img2_filename, save_
 
     list_length = len(images1)
     im1 = imread(images1[0])
-    im2 = imread(images1[0])
+    im2 = imread(images2[0])
     if im1.shape != im2.shape:
         print("The image pairs do not have equal sizes!")
         sys.exit(1)       
