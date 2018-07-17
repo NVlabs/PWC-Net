@@ -12,17 +12,16 @@ The program assumes that images to process are of the same size.
 
 #### Benchmarking time
 
-Please modify the caffe directory below
-# KITTI resolution
+Please modify the caffe directory below*KITTI resolution
 YOUR_DIRECTORY/flownet2/build/tools/caffe.bin time -model ./benchmark_time/pwc_net_1280_384_batch1.tpl.prototxt -weights ./model/pwc_net.caffemodel -iterations 100 -gpu 0;
 
-# Middlebury "Urban" resolution (accounting for the x2 image resizing)
+Middlebury "Urban" resolution (accounting for the x2 image resizing)
 YOUR_DIRECTORY/flownet2/build/tools/caffe.bin time -model ./benchmark_time/pwc_net_1280_960_batch1.tpl.prototxt -weights ./model/pwc_net.caffemodel -iterations 100 -gpu 0;
 
-# Sintel resolution
+Sintel resolution
 YOUR_DIRECTORY/flownet2/build/tools/caffe.bin time -model ./benchmark_time/pwc_net_1024_448_batch1.tpl.prototxt -weights ./model/pwc_net.caffemodel -iterations 100 -gpu 0;
 
-# HD1K resolution (requires a GPU with 16G+ memory, such as  NVIDIA Tesla Volta 100)
+HD1K resolution (requires a GPU with 16G+ memory, such as  NVIDIA Tesla Volta 100)
 YOUR_DIRECTORY/flownet2/build/tools/caffe.bin time -model ./benchmark_time/pwc_net_2560_1088_batch1.tpl.prototxt -weights ./model/pwc_net.caffemodel -iterations 100 -gpu 0;
 
 
