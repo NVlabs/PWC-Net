@@ -28,7 +28,8 @@ YOUR_DIRECTORY/flownet2/build/tools/caffe.bin time -model ./benchmark_time/pwc_n
 
 #### Training 
 
-TBA
+1.Please download the FlyingChairs dataset from https://lmb.informatik.uni-freiburg.de/resources/datasets, make the LMDB file, modify the local directory in ./model/train.prototxt. 
+2.Modify the local directory in  ./train.py and Run ./train.py
 
 
 

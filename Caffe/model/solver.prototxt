@@ -1,0 +1,19 @@
+# use the learning rate scheme as the FlowNet2 paper
+net: "../model/train.prototxt"
+snapshot_prefix: "flow"
+base_lr: 0.0001
+lr_policy: "multistep"
+gamma: 0.5
+stepvalue: 400000
+stepvalue: 600000
+stepvalue: 800000
+stepvalue: 1000000
+stepvalue: 1200000 
+momentum: 0.9
+weight_decay: 0.0004
+display: 100
+max_iter: 1200000
+snapshot: 20000
+solver_mode: GPU
+solver_type: ADAM
+momentum2: 0.999
