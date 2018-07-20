@@ -1,13 +1,15 @@
 
 #### Installation
-The code was developed using python 2.7 & pytorch 0.2.  There may be a problem related to software versions. To fix the problem, you may look at the implementation in PWCNet.py and replace the syntax to match the new pytorch environment. 
+The code was developed using Python 2.7 & PyTorch 0.2 & CUDA 8.0. There may be a problem related to software versions. To fix the problem, you may look at the implementation in PWCNet.py and replace the syntax to match the new pytorch environment. 
 Install correlation package (if you haven't installed this package before):
 - Go to external_packages/correlation-pytorch-master/, follow the instruction in the readme.MD file there
 - You might have to run the command in make_cuda.sh line by line
 
 #### Test
-Test the code: execute script_pwc.py [image1_filename] [image2_filename] [save_flow_filename], e.g. 
-	python script_pwc.py './data/frame_0010.png' './data/frame_0011.png' './tmp/frame_0010.flo'
+-  Test the code: execute script_pwc.py [image1_filename] [image2_filename] [save_flow_filename], e.g. 
+	 ```python script_pwc.py './data/frame_0010.png' './data/frame_0011.png' './tmp/frame_0010.flo'```
+-  pwc_net_chairs.pth.tar is the pretrained weight using flyingthings3D dataset
+-  pwc_net.pth.tar is the fine-tuned weight on MPI Sintel
 
 
 #### Stuffs that may confuse you:
@@ -17,7 +19,8 @@ Test the code: execute script_pwc.py [image1_filename] [image2_filename] [save_f
 
 
 #### Note
-- The PyTorch code does not fully reproduce the results by the Caffe code because of differences in implementation details, such as resizing and image I/O. Please use the Caffe code to reproduce the PWC-Net results in the CVPR paper and the ROB challenge. 
+- The PyTorch code does not fully reproduce the results by the Caffe code because of differences in implementation details, such as resizing and image I/O. Please use the Caffe code to reproduce the PWC-Net results in the CVPR paper and the ROB challenge
+- The average EPE at MPI Sintel is 1.83 (clean) and 2.31 (final). For the official Caffe implementation, the average EPE is 1.81 (clean) and 2.29 (final)
 
 
 #### Acknowledgement
