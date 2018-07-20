@@ -13,7 +13,7 @@ For Caffe users, please refer to [Caffe/README.md](Caffe/README.md).
 
 For PyTorch users, please refer to [PyTorch/README.md](PyTorch/README.md)
 
-Note that, currently, the PyTorch implementation is inferior to the Caffe implementation (~3% performance drop on Sintel). These are due to differences in implementation between Caffe and PyTorch, such as image resizing and I/O. 
+The PyTorch implementation almost matches the Caffe implementation (average EPE on the final pass of the Sintel training set: 2.31 by Pytorch and 2.29 by Caffe). 
 
 ### Network Architecture
 
