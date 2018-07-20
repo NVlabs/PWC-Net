@@ -6,8 +6,10 @@ Install correlation package (if you haven't installed this package before):
 - You might have to run the command in make_cuda.sh line by line
 
 #### Test
-Test the code: execute script_pwc.py [image1_filename] [image2_filename] [save_flow_filename], e.g. 
+-  Test the code: execute script_pwc.py [image1_filename] [image2_filename] [save_flow_filename], e.g. 
 	python script_pwc.py './data/frame_0010.png' './data/frame_0011.png' './tmp/frame_0010.flo'
+-  pwc_net_chairs.pth.tar is the pretrained weight using flyingthings3D dataset
+-  pwc_net.pth.tar is the fine-tuned weight on MPI Sintel
 
 
 #### Stuffs that may confuse you:
