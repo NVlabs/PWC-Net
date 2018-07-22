@@ -76,8 +76,8 @@ flo = flo.cpu().data.numpy()
 flo = np.swapaxes(np.swapaxes(flo, 0, 1), 1, 2) # 
 u_ = cv2.resize(flo[:,:,0],(W,H))
 v_ = cv2.resize(flo[:,:,1],(W,H))
-u_ *= H/ float(H_)
-v_ *= W/ float(W_)
+u_ *= W/ float(W_)
+v_ *= H/ float(H_)
 flo = np.dstack((u_,v_))
 
 writeFlowFile(flow_fn, flo)
