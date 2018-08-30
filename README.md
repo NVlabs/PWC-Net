@@ -53,6 +53,7 @@ or the arXiv paper
 ```
 ### Related Work from NVIDIA 
 [flownet2-pytorch](https://github.com/NVIDIA/flownet2-pytorch)
+[Learning Rigidity in Dynamic Scenes with a Moving Camera for 3D Motion Field Estimation (ECCV 2018)](https://github.com/NVlabs/learningrigidity)
 
 ### Contact
 Deqing Sun (deqings@nvidia.com)
