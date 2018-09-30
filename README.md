@@ -25,6 +25,7 @@ PWC-Net fuses several classic optical flow estimation techniques, including imag
 ### Paper & Citation
 [Deqing Sun, Xiaodong Yang, Ming-Yu Liu, and Jan Kautz. "PWC-Net: CNNs for Optical Flow Using Pyramid, Warping, and Cost Volume." CVPR 2018 or arXiv:1709.02371](https://arxiv.org/abs/1709.02371)
 
+[Updated and extended version: "Models Matter, So Does Training: An Empirical Study of CNNs for Optical Flow Estimation." 	arXiv:1809.05571](https://arxiv.org/abs/1809.05571)
 
 [Project page link](http://research.nvidia.com/publication/2018-02_PWC-Net:-CNNs-for)
 
@@ -49,6 +50,15 @@ or the arXiv paper
   title={{PWC-Net}: {CNNs} for Optical Flow Using Pyramid, Warping, and Cost Volume},
   journal={arXiv preprint arXiv:1709.02371},
   year={2017}
+}
+```
+or the updated and extended version
+```
+@article{Sun2018:Model:Training:Flow,
+  author={Sun, Deqing and Yang, Xiaodong and Liu, Ming-Yu and Kautz, Jan},
+  title={Models Matter, So Does Training: An Empirical Study of CNNs for Optical Flow Estimation},
+  journal={arXiv preprint	arXiv:1809.05571},
+  year={2018}
 }
 ```
 ### Related Work from NVIDIA 
