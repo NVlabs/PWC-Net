@@ -157,8 +157,8 @@ class PWCDCNet(nn.Module):
         vgrid = Variable(grid) + flo
 
         # scale grid to [-1,1] 
-        vgrid[:,0,:,:] = 2.0*vgrid[:,0,:,:]/max(W-1,1)-1.0
-        vgrid[:,1,:,:] = 2.0*vgrid[:,1,:,:]/max(H-1,1)-1.0
+        vgrid[:,0,:,:] = 2.0*vgrid[:,0,:,:].clone() / max(W-1,1)-1.0
+        vgrid[:,1,:,:] = 2.0*vgrid[:,1,:,:].clone() / max(H-1,1)-1.0
 
         vgrid = vgrid.permute(0,2,3,1)        
         output = nn.functional.grid_sample(x, vgrid)
@@ -263,7 +263,7 @@ class PWCDCNet(nn.Module):
         flow2 = self.predict_flow2(x)
  
         x = self.dc_conv4(self.dc_conv3(self.dc_conv2(self.dc_conv1(x))))
-        flow2 += self.dc_conv7(self.dc_conv6(self.dc_conv5(x)))
+        flow2 = flow2 + self.dc_conv7(self.dc_conv6(self.dc_conv5(x)))
         
         if self.training:
             return flow2,flow3,flow4,flow5,flow6
@@ -388,8 +388,8 @@ class PWCDCNet_old(nn.Module):
         vgrid = Variable(grid) + flo
 
         # scale grid to [-1,1] 
-        vgrid[:,0,:,:] = 2.0*vgrid[:,0,:,:]/max(W-1,1)-1.0
-        vgrid[:,1,:,:] = 2.0*vgrid[:,1,:,:]/max(H-1,1)-1.0
+        vgrid[:,0,:,:] = 2.0*vgrid[:,0,:,:].clone() / max(W-1,1)-1.0
+        vgrid[:,1,:,:] = 2.0*vgrid[:,1,:,:].clone() / max(H-1,1)-1.0
 
         vgrid = vgrid.permute(0,2,3,1)        
         output = nn.functional.grid_sample(x, vgrid)
@@ -481,7 +481,7 @@ class PWCDCNet_old(nn.Module):
         flow2 = self.predict_flow2(x)
  
         x = self.dc_conv4(self.dc_conv3(self.dc_conv2(self.dc_conv1(x))))
-        flow2 += self.dc_conv7(self.dc_conv6(self.dc_conv5(x)))
+        flow2 = flow2 + self.dc_conv7(self.dc_conv6(self.dc_conv5(x)))
         
         if self.training:
             return flow2,flow3,flow4,flow5,flow6
