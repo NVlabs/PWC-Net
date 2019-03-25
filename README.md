@@ -57,8 +57,8 @@ or the updated and extended version
 @article{Sun2018:Model:Training:Flow,
   author={Sun, Deqing and Yang, Xiaodong and Liu, Ming-Yu and Kautz, Jan},
   title={Models Matter, So Does Training: An Empirical Study of CNNs for Optical Flow Estimation},
-  journal={arXiv preprint	arXiv:1809.05571},
-  year={2018}
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)},
+  note = {to appear}
 }
 ```
 ### Related Work from NVIDIA 
