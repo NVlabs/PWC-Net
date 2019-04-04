@@ -31,7 +31,7 @@ PWC-Net fuses several classic optical flow estimation techniques, including imag
 
 [Talk at robust vision challenge workshop](https://www.youtube.com/watch?v=vVU8XV0Ac_0)
 
-[Talk at CVPR 2018 conference (starts ~7:00)](https://www.youtube.com/watch?v=LBJ20kxr1a0)
+[Talk at CVPR 2018 conference](https://youtu.be/LBJ20kxr1a0?t=421)
  
 
 If you use PWC-Net, please cite the following paper: 
@@ -59,6 +59,15 @@ or the updated and extended version
   title={Models Matter, So Does Training: An Empirical Study of CNNs for Optical Flow Estimation},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)},
   note = {to appear}
+}
+```
+For multi-frame flow, please also cite
+```
+@inproceedings{ren2018fusion,
+  title={A Fusion Approach for Multi-Frame Optical Flow Estimation},
+  author={Ren, Zhile and Gallo, Orazio and Sun, Deqing and Yang, Ming-Hsuan and Sudderth, Erik B and Kautz, Jan},
+  booktitle={Proceedings of the IEEE Winter Conference on Applications of Computer Vision (WACV)},
+  year={2019}
 }
 ```
 ### Related Work from NVIDIA 
