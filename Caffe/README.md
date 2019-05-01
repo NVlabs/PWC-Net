@@ -32,8 +32,14 @@ YOUR_DIRECTORY/flownet2/build/tools/caffe.bin time -model ./benchmark_time/pwc_n
 1.Please download the FlyingChairs dataset from https://lmb.informatik.uni-freiburg.de/resources/datasets, make the LMDB file, modify the local directory in ./model/train.prototxt. 
 2.Modify the local directory in  ./train.py and Run ./train.py
 
+#### Generating Caffe protocols from PyCaffe
+Please go to ./model/PyCaffe and run ./make_model.py. You need to specify the lmdb_file and split_list to your local directories. You can follow pwc_net_utils.py to define new models.
+
+
 ### Method description
 The model here is PWC-Net with a larger feature pyramid extractor (PWC-Net-feature-uparrow, second row in Table5(a) of Our CVPR 2018 paper below).
+
+
 
 #### Paper & Citation
 Deqing Sun, Xiaodong Yang, Ming-Yu Liu, and Jan Kautz. "PWC-Net: CNNs for Optical Flow Using Pyramid, Warping, and Cost Volume." CVPR 2018. 

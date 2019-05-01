@@ -1,0 +1,54 @@
+# layer {
+#   name: "Eltwise4"
+#   type: "Eltwise"
+#   bottom: "predict_flow2"
+#   top: "blob44"
+#   eltwise_param {
+#     operation: SUM
+#     coeff: 20.0
+#   }
+# }
+layer {
+  name: "Resample4"
+  type: "Resample"
+  bottom: "blob44"
+  top: "predict_flow_resize"
+  resample_param {
+    width: $TARGET_WIDTH
+    height: $TARGET_HEIGHT
+    type: LINEAR
+    antialias: true
+  }
+}
+layer {
+  name: "Convolution6"
+  type: "Convolution"
+  bottom: "predict_flow_resize"
+  top: "predict_flow_final"
+  convolution_param {
+    num_output: 2
+    pad: 0
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "diagonal"
+      diag_val: $SCALE_WIDTH
+      diag_val: $SCALE_HEIGHT
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+layer {
+  name: "FLOWriter"
+  type: "FLOWriter"
+  bottom: "predict_flow_final"
+  writer_param {
+    folder: "./tmp"
+    prefix: "pwc-net-pred-"
+    suffix: ""
+    scale: 1.0
+  }
+}
+

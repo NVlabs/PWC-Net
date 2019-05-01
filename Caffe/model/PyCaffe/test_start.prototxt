@@ -1,0 +1,103 @@
+layer {
+  name: "Image1"
+  type: "ImageData"
+  top: "img0"
+  top: "dummy1" 
+  image_data_param {
+    source: "tmp/img1.txt"
+    batch_size: 1
+  }
+}
+layer {
+  name: "Image2"
+  type: "ImageData"
+  top: "img1"
+  top: "dummy2" 
+  image_data_param {
+    source: "tmp/img2.txt"
+    batch_size: 1
+  }
+}
+layer {
+  name: "dummy1" 
+  type: "Silence" 
+  bottom: "dummy1" 
+}
+
+layer {
+  name: "dummy2"
+  type: "Silence"
+  bottom: "dummy2"
+}
+
+
+layer {
+  name: "Eltwise2"
+  type: "Eltwise"
+  bottom: "img1"
+  top: "img1s"
+  eltwise_param {
+    operation: SUM
+    coeff: 0.00392156862745
+  }
+}
+layer {
+  name: "Eltwise1"
+  type: "Eltwise"
+  bottom: "img0"
+  top: "img0s"
+  eltwise_param {
+    operation: SUM
+    coeff: 0.00392156862745
+  }
+}
+layer {
+  name: "img0s_aug"
+  type: "DataAugmentation"
+  bottom: "img0s"
+  top: "img0_nomean"
+  augmentation_param {
+    augment_during_test: true
+    recompute_mean: 1000
+    mean_per_pixel: false
+    crop_width: $TARGET_WIDTH
+    crop_height: $TARGET_HEIGHT
+  }
+}
+layer {
+  name: "img1s_aug"
+  type: "DataAugmentation"
+  bottom: "img1s"
+  top: "img1_nomean"
+  augmentation_param {
+    augment_during_test: true
+    recompute_mean: 1000
+    mean_per_pixel: false
+    crop_width: $TARGET_WIDTH
+    crop_height: $TARGET_HEIGHT
+  }
+}
+layer {
+  name: "Resample2"
+  type: "Resample"
+  bottom: "img1_nomean"
+  top: "img1_nomean_resize"
+  resample_param {
+    width: $ADAPTED_WIDTH
+    height: $ADAPTED_HEIGHT
+    type: LINEAR
+    antialias: true
+  }
+}
+layer {
+  name: "Resample1"
+  type: "Resample"
+  bottom: "img0_nomean"
+  top: "img0_nomean_resize"
+  resample_param {
+    width: $ADAPTED_WIDTH
+    height: $ADAPTED_HEIGHT
+    type: LINEAR
+    antialias: true
+  }
+}
