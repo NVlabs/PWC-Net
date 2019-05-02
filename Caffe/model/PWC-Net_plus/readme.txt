@@ -2,7 +2,8 @@
 You can find the trained model (*.caffemodel) and the test protocol (./model/test.prototxt) under each folder.
 
 **********Training**********
-TBA
+./PWC-Net_plus_kitti/run.sh or ./PWC-Net_plus_sintel/run.sh
+Please modify the local paths to the Caffe bin in train*.py and data LMDB files in train*.prototxt
 
 **********Reference**********
 For more details, please see (https://arxiv.org/abs/1809.05571)
