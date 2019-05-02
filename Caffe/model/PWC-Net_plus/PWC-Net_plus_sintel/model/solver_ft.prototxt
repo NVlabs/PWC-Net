@@ -1,0 +1,23 @@
+net: "../model/train_ft.prototxt"
+snapshot_prefix: "flow"
+base_lr: 0.00005 # 5e-5
+lr_policy: "multistep"
+gamma: 0.5
+stepvalue: 45000
+stepvalue: 65000
+stepvalue: 85000
+stepvalue: 95000
+stepvalue: 97500
+stepvalue: 100000
+stepvalue: 110000
+stepvalue: 120000
+stepvalue: 130000
+stepvalue: 140000
+momentum: 0.9
+weight_decay: 0.0004
+display: 100
+max_iter: 150000
+snapshot: 2000
+solver_mode: GPU
+solver_type: ADAM
+momentum2: 0.999
