@@ -76,5 +76,6 @@ For multi-frame flow, please also cite
 [Learning Rigidity in Dynamic Scenes with a Moving Camera for 3D Motion Field Estimation (ECCV 2018)](https://github.com/NVlabs/learningrigidity)
 
 ### Contact
-Deqing Sun (deqings@nvidia.com)
+Deqing Sun (deqing.sun@gmail.com)
+
 
