@@ -2,7 +2,7 @@ Instructions:
 
 #### Testing (Inference)
 
-1. Please download the code from https://github.com/xmfbit/flownet2 or https://github.com/lmb-freiburg/flownet2 and follow the instructions there to compile the code. (If you encounter problems in compling the code, Please contact deqings@nvidia.com for a docker image)
+1. Please download the code from https://github.com/xmfbit/flownet2 or https://github.com/lmb-freiburg/flownet2 and follow the instructions there to compile the code. (You can also build the flownet2 docker to run PWC-Net https://github.com/lmb-freiburg/flownet2-docker)
 2. Put warp_layer.cu and warp_layer.cpp (in ./warping_code) to src/caffe/layers and warp_layer.hpp (in ./warping_code) to include/caffe/layers, recompile.
 3. Run python ./proc_images.py [img1.txt img2.txt out.txt]. Please compare your results with ./tmp/reference_frame_0010_forward.flo and ./tmp/reference_frame_0011_backward.flo.
 4. [TOO ADD] Modify the code and data directory in run_rob_test.py (lines 17-21); make sure that the ROB test images are in your disk.
