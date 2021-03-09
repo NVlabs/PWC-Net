@@ -2,13 +2,8 @@ This repository contains a custom pytorch package that adds a module and functio
 
 To install:
 
-1. Run `pip install cffi`
-
-2. Run `make_cuda.sh`
-
-3. Run `python setup.py build install`
-
-4. (optional) Run `python test/test.py`
+1. Run `make_cuda.sh`
+2. (optional) Run `python test/test.py`
 
 
 #### Acknowledgement
