@@ -20,11 +20,11 @@ int corr_cuda_forward(THCudaTensor *input1,
 
     // TODO: Shapechecks
 
-    int batchSize = input1->size[0];
+    int batchSize = input1->size(0);
 
-    long nInputPlane = input1->size[1];
-    long nInputRows = input1->size[2];
-    long nInputCols = input1->size[3];
+    long nInputPlane = input1->size(1);
+    long nInputRows = input1->size(2);
+    long nInputCols = input1->size(3);
     long inputWidthHeight = nInputRows * nInputCols;
 
     long kernel_radius_ = (kernel_size - 1) / 2;
@@ -100,10 +100,10 @@ int corr_cuda_backward(THCudaTensor *input1,
     float * input1_data = THCudaTensor_data(state, input1);
     float * input2_data = THCudaTensor_data(state, input2);
 
-    long nInputCols = input1->size[3];
-    long nInputRows = input1->size[2];
-    long nInputPlane = input1->size[1];
-    long batchSize = input1->size[0];
+    long nInputCols = input1->size(3);
+    long nInputRows = input1->size(2);
+    long nInputPlane = input1->size(1);
+    long batchSize = input1->size(0);
 
   //  THCudaTensor_resizeAs(state, gradInput1, input1);
   //  THCudaTensor_resizeAs(state, gradInput2, input2);
