@@ -16,6 +16,7 @@ class Correlation(Module):
     def reset_params(self):
         return
 
+    @staticmethod
     def forward(self, input1, input2):
         return correlation(self.pad_size, self.kernel_size, self.max_displacement, self.stride1, self.stride2, self.corr_multiply)(input1, input2)
 
@@ -40,6 +41,7 @@ class Correlation1d(Module):
     def reset_params(self):
         return
 
+    @staticmethod
     def forward(self, input1, input2):
         return correlation1d(self.pad_size, self.kernel_size, self.max_displacement, self.stride1, self.stride2, self.corr_multiply)(input1, input2)
 
