@@ -99,7 +99,7 @@ def test_correlation1d_0():
 
 
     model2 = correlation1d(1, 1, 1, 1, 1, 1)
-    y2 = model2(A_, B_)
+    y2 = model2.apply(A_, B_)
     print(y2) # should be 1x3x2x2
 
     return
@@ -113,7 +113,7 @@ def test_correlation1d():
 
     #import pdb; pdb.set_trace()
     model = correlation1d(20, 1, 20, 1, 1, 1)
-    y = model(A_, B_)
+    y = model.apply(A_, B_)
     print(y.size())
 
     print('Functional interface test passed')
