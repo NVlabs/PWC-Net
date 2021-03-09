@@ -4,7 +4,7 @@ import torch
 import numpy as np
 from math import ceil
 from torch.autograd import Variable
-from scipy.ndimage import imread
+from imageio import imread
 import models
 """
 Contact: Deqing Sun (deqings@nvidia.com); Zhile Ren (jrenzhile@gmail.com)
