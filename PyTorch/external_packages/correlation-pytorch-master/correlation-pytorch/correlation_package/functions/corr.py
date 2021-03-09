@@ -13,10 +13,11 @@ class correlation(Function):
         self.stride2 = stride2
         self.corr_multiply = corr_multiply
 
+    @staticmethod
     def forward(self, input1, input2):
 
         self.save_for_backward(input1, input2)
-        
+
         rbot1 = input1.new()
         rbot2 = input2.new()
         output = input1.new()
@@ -33,6 +34,7 @@ class correlation(Function):
 
         return output
 
+    @staticmethod
     def backward(self, grad_output):
 
         input1, input2 = self.saved_tensors
@@ -71,6 +73,7 @@ class correlation1d(Function):
         self.stride2 = stride2
         self.corr_multiply = corr_multiply
 
+    @staticmethod
     def forward(self, input1, input2):
 
         self.save_for_backward(input1, input2)
@@ -91,6 +94,7 @@ class correlation1d(Function):
 
         return output
 
+    @staticmethod
     def backward(self, grad_output):
 
         input1, input2 = self.saved_tensors
