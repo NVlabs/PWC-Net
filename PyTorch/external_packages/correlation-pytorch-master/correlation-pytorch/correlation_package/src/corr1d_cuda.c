@@ -15,7 +15,7 @@ int corr1d_cuda_forward(THCudaTensor *input1,
                       int stride1,
                       int stride2,
                       int corr_type_multiply
-                      //single_direction=0 
+                      //single_direction=0
                       )
 {
 
@@ -44,7 +44,7 @@ int corr1d_cuda_forward(THCudaTensor *input1,
     int x_shift = -neighborhood_grid_radius_;
 
     // Number of output channels amounts to displacement combinations in X direction only!!
-    int nOutputPlane = neighborhood_grid_width_;//Same, because 1D X-correlation 
+    int nOutputPlane = neighborhood_grid_width_;//Same, because 1D X-correlation
 
     // Inputs
     float * input1_data = THCudaTensor_data(state, input1);
