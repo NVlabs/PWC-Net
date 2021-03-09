@@ -64,7 +64,7 @@ int corr1d_cuda_forward(THCudaTensor *input1,
     float * rbot1_data = THCudaTensor_data(state, rbot1);
     float * rbot2_data = THCudaTensor_data(state, rbot2);
 
-    cudaStream_t stream = THCState_getCurrentStream(state);
+    cudaStream_t stream = c10::cuda::getCurrentCUDAStream();
 
     int pwidthheight = paddedbottomwidth * paddedbottomheight;
 
@@ -145,7 +145,7 @@ int corr1d_cuda_backward(THCudaTensor *input1,
 
     int pwidthheight = paddedbottomwidth * paddedbottomheight;
 
-    cudaStream_t stream = THCState_getCurrentStream(state);
+    cudaStream_t stream = c10::cuda::getCurrentCUDAStream();
 
     blob_rearrange_ongpu_1d(input1_data,rbot1_data,batchSize,nInputPlane,nInputCols,nInputRows,inputWidthHeight,pad_size,pwidthheight,stream);
 

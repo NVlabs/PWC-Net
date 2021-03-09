@@ -90,7 +90,7 @@ void ChannelNorm_kernel_forward(THCState* state, THCudaTensor* input1, THCudaTen
     const long4 output_stride = make_long4(output->stride[0], output->stride[1], output->stride[2], output->stride[3]);
 
     n = THCudaTensor_nElement(state, output);
-    kernel_ChannelNorm_updateOutput<<< (n + CUDA_NUM_THREADS - 1)/CUDA_NUM_THREADS, CUDA_NUM_THREADS, 0, THCState_getCurrentStream(state) >>>(
+    kernel_ChannelNorm_updateOutput<<< (n + CUDA_NUM_THREADS - 1)/CUDA_NUM_THREADS, CUDA_NUM_THREADS, 0, c10::cuda::getCurrentCUDAStream() >>>(
         n, THCudaTensor_data(state, input1), input1_size, input1_stride, THCudaTensor_data(state, output), output_size, output_stride, 
         norm_deg);
 
@@ -113,7 +113,7 @@ void ChannelNorm_kernel_backward(THCState* state, THCudaTensor* input1, THCudaTe
     const long4 gradInput1_stride = make_long4(gradInput1->stride[0], gradInput1->stride[1], gradInput1->stride[2], gradInput1->stride[3]);
 
     n = THCudaTensor_nElement(state, gradInput1);
-    kernel_ChannelNorm_backward_input1<<< (n + CUDA_NUM_THREADS - 1)/CUDA_NUM_THREADS, CUDA_NUM_THREADS, 0, THCState_getCurrentStream(state) >>>(
+    kernel_ChannelNorm_backward_input1<<< (n + CUDA_NUM_THREADS - 1)/CUDA_NUM_THREADS, CUDA_NUM_THREADS, 0, c10::cuda::getCurrentCUDAStream() >>>(
         n, THCudaTensor_data(state, input1), input1_size, input1_stride, THCudaTensor_data(state, output), output_size, output_stride,
         THCudaTensor_data(state, gradOutput), gradOutput_size, gradOutput_stride, THCudaTensor_data(state, gradInput1), gradInput1_size, gradInput1_stride,
         norm_deg
