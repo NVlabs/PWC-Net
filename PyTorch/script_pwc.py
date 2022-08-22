@@ -4,14 +4,14 @@ import torch
 import numpy as np
 from math import ceil
 from torch.autograd import Variable
-from scipy.ndimage import imread
+from imageio import imread
 import models
 """
 Contact: Deqing Sun (deqings@nvidia.com); Zhile Ren (jrenzhile@gmail.com)
 """
 def writeFlowFile(filename,uv):
 	"""
-	According to the matlab code of Deqing Sun and c++ source code of Daniel Scharstein  
+	According to the matlab code of Deqing Sun and c++ source code of Daniel Scharstein
 	Contact: dqsun@cs.brown.edu
 	Contact: schar@middlebury.edu
 	"""
@@ -56,12 +56,12 @@ for i in range(len(im_all)):
 for _i, _inputs in enumerate(im_all):
 	im_all[_i] = im_all[_i][:, :, ::-1]
 	im_all[_i] = 1.0 * im_all[_i]/255.0
-	
+
 	im_all[_i] = np.transpose(im_all[_i], (2, 0, 1))
 	im_all[_i] = torch.from_numpy(im_all[_i])
-	im_all[_i] = im_all[_i].expand(1, im_all[_i].size()[0], im_all[_i].size()[1], im_all[_i].size()[2])	
+	im_all[_i] = im_all[_i].expand(1, im_all[_i].size()[0], im_all[_i].size()[1], im_all[_i].size()[2])
 	im_all[_i] = im_all[_i].float()
-    
+
 im_all = torch.autograd.Variable(torch.cat(im_all,1).cuda(), volatile=True)
 
 net = models.pwc_dc_net(pwc_model_fn)
@@ -72,8 +72,8 @@ flo = net(im_all)
 flo = flo[0] * 20.0
 flo = flo.cpu().data.numpy()
 
-# scale the flow back to the input size 
-flo = np.swapaxes(np.swapaxes(flo, 0, 1), 1, 2) # 
+# scale the flow back to the input size
+flo = np.swapaxes(np.swapaxes(flo, 0, 1), 1, 2) #
 u_ = cv2.resize(flo[:,:,0],(W,H))
 v_ = cv2.resize(flo[:,:,1],(W,H))
 u_ *= W/ float(W_)

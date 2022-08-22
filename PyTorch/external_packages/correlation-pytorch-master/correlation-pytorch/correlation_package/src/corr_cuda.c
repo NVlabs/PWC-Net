@@ -20,11 +20,11 @@ int corr_cuda_forward(THCudaTensor *input1,
 
     // TODO: Shapechecks
 
-    int batchSize = input1->size[0];
+    int batchSize = input1->size(0);
 
-    long nInputPlane = input1->size[1];
-    long nInputRows = input1->size[2];
-    long nInputCols = input1->size[3];
+    long nInputPlane = input1->size(1);
+    long nInputRows = input1->size(2);
+    long nInputCols = input1->size(3);
     long inputWidthHeight = nInputRows * nInputCols;
 
     long kernel_radius_ = (kernel_size - 1) / 2;
@@ -62,7 +62,7 @@ int corr_cuda_forward(THCudaTensor *input1,
     float * rbot1_data = THCudaTensor_data(state, rbot1);
     float * rbot2_data = THCudaTensor_data(state, rbot2);
 
-    cudaStream_t stream = THCState_getCurrentStream(state);
+    cudaStream_t stream = c10::cuda::getCurrentCUDAStream();
 
     int pwidthheight = paddedbottomwidth * paddedbottomheight;
 
@@ -100,10 +100,10 @@ int corr_cuda_backward(THCudaTensor *input1,
     float * input1_data = THCudaTensor_data(state, input1);
     float * input2_data = THCudaTensor_data(state, input2);
 
-    long nInputCols = input1->size[3];
-    long nInputRows = input1->size[2];
-    long nInputPlane = input1->size[1];
-    long batchSize = input1->size[0];
+    long nInputCols = input1->size(3);
+    long nInputRows = input1->size(2);
+    long nInputPlane = input1->size(1);
+    long batchSize = input1->size(0);
 
   //  THCudaTensor_resizeAs(state, gradInput1, input1);
   //  THCudaTensor_resizeAs(state, gradInput2, input2);
@@ -141,7 +141,7 @@ int corr_cuda_backward(THCudaTensor *input1,
 
     int pwidthheight = paddedbottomwidth * paddedbottomheight;
 
-    cudaStream_t stream = THCState_getCurrentStream(state);
+    cudaStream_t stream = c10::cuda::getCurrentCUDAStream();
 
     blob_rearrange_ongpu(input1_data,rbot1_data,batchSize,nInputPlane,nInputCols,nInputRows,inputWidthHeight,pad_size,pwidthheight,stream);
 
