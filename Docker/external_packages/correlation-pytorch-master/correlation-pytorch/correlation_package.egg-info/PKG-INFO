@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: correlation-package
+Version: 0.1
+Summary: Correlation layer from FlowNetC
+Home-page: https://github.com/jbarker-nvidia/pytorch-correlation
+Author: Jon Barker
+Author-email: jbarker@nvidia.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
